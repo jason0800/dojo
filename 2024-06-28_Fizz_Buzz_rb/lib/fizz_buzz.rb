@@ -1,5 +1,5 @@
 class FizzBuzz
   def output(number)
-    number
+    number == 3 ? 'fizz' : number
   end
 end
