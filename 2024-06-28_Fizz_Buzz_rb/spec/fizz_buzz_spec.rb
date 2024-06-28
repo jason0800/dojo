@@ -12,4 +12,8 @@ RSpec.describe FizzBuzz do
   it "returns fizz for input 3" do
     expect(FizzBuzz.new.output(3)).to eq 'fizz'
   end
+
+  it "returns buzz for input 5" do
+    expect(FizzBuzz.new.output(5)).to eq 'buzz'
+  end
 end
