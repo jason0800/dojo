@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 require 'fizz_buzz'
 
-RSpec.describe FizzBuzz do
+RSpec.describe FizzBuzz do # rubocop:disable Metrics/BlockLength
   it 'returns 1 for input 1' do
     expect(FizzBuzz.new.output(1)).to eq 1
   end
@@ -25,7 +27,7 @@ RSpec.describe FizzBuzz do
     expect(FizzBuzz.new.output(15)).to eq 'fizz buzz'
   end
 
-  it 'returns fizz buzz numbers 1 to 100' do
+  it 'returns fizz buzz numbers 1 to 100' do # rubocop:disable Metrics/BlockLength
     expect(
       (1..100).map do |index|
         FizzBuzz.new.output(index)
