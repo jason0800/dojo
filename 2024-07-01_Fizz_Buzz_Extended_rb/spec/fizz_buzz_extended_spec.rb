@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../lib/fizz_buzz_extended.rb'
+require 'csv'
 
 RSpec.describe FizzBuzzExtended do
   it 'returns 1 for input 1' do
@@ -26,4 +27,10 @@ RSpec.describe FizzBuzzExtended do
     expect(FizzBuzzExtended.new.output(210)).to eq 'PlinkPlankPlonk'
     expect(FizzBuzzExtended.new.output(420)).to eq 'PlinkPlankPlonk'
   end
+end
+
+csv_file_path = '../data/fizz_buzz_extended.csv'
+
+CSV.foreach(csv_file_path) do |row|
+  puts row[0]
 end
