@@ -1,14 +1,3 @@
-# require 'csv'
-
-# filepath = "fizz_buzz_extended.csv"
-# array = []
-
-# CSV.foreach(filepath) do |row|
-#   array << row[0]
-# end
-
-# puts array
-
 class Plink
   def output(number)
     result = ""
