@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 require 'csv'
-require_relative '../lib/plink.rb'
+require_relative '../lib/plink'
 
-RSpec.describe Plink do
+RSpec.describe Plink do # rubocop:disable Metrics/BlockLength
   subject(:plink) { Plink.new }
 
   it 'returns 1 for input 1' do
-    expect(plink.output(1)).to eq "1"
+    expect(plink.output(1)).to eq '1'
   end
 
   it 'returns Plink for input divisible by 3' do
@@ -31,7 +31,7 @@ RSpec.describe Plink do
   end
 
   it 'produces the right output up to 200' do
-    filepath = "data/plink_output.csv"
+    filepath = 'data/plink_output.csv'
     expected_array = []
 
     CSV.foreach(filepath) do |row|
