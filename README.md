@@ -1,6 +1,6 @@
 # Dojo
 
-Practice everyday
+TDD at Failure Driven
 
 ## Setup
 
