@@ -1,10 +1,16 @@
 #!/usr/bin/env ruby
 
-# Add the lib directory to the load path
+# Add lib directory to load path
 $LOAD_PATH << File.expand_path('../lib', __dir__)
 
-# require our library
+# require lib directory
 require "review_stats"
+
+# nice to have this
+review_stats = ReviewStats.new(ARGV[0])
+puts review_stats.output
+
+# # Archives below
 
 # untested code below
 # might be better to wrap inside a class? see comment at end of this file
@@ -15,8 +21,3 @@ require "review_stats"
 # spread = ReviewStats.spread(array)
 # puts ReviewStats.output(average: average, median: median, count: count, spread: spread)
 # puts ReviewStats.output(average: average, count: array.count, spread: array.tally)
-
-# maybe would be nice to have something like this
-review_stats = ReviewStats.new(ARGV[0])
-review_stats.process
-# puts review_stats.output

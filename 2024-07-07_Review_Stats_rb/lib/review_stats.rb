@@ -1,10 +1,9 @@
 require 'csv'
 
 class ReviewStats
-  attr_reader :csv_file, :array
-
   def initialize(csv_file)
     @csv_file = csv_file
+    self.process
   end
 
   def process
@@ -36,7 +35,7 @@ class ReviewStats
   def count
     return 0 if @array.empty?
 
-    @array.length
+    @count = @array.length
   end
 
   def spread
@@ -45,21 +44,20 @@ class ReviewStats
     @array.tally
   end
 
-  # def self.output(values)
-  #   hash = values[:spread]
-  #   array = [0, 0, 0, 0, 0]
-  #   hash.each { |key, value| array[key - 1] = value } if hash
+  def output
+    array = [0, 0, 0, 0, 0]
+    self.spread.each { |key, value| array[key - 1] = value } if self.spread != 0
 
-  #   <<~EO_DISPLAY
-  #     Average: #{values[:average]}
-  #     Median: #{values[:median]}
-  #     Count: #{values[:count]}
-  #     Spread:
-  #     5 #{"*" * array[4]}
-  #     4 #{"*" * array[3]}
-  #     3 #{"*" * array[2]}
-  #     2 #{"*" * array[1]}
-  #     1 #{"*" * array[0]}
-  #   EO_DISPLAY
-  # end
+    <<~EO_DISPLAY
+      Average: #{self.average}
+      Median: #{self.median}
+      Count: #{self.count}
+      Spread:
+      5 #{"*" * array[4]}
+      4 #{"*" * array[3]}
+      3 #{"*" * array[2]}
+      2 #{"*" * array[1]}
+      1 #{"*" * array[0]}
+    EO_DISPLAY
+  end
 end
