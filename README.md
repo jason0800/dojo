@@ -1,6 +1,8 @@
 # Dojo
 
-TDD at Failure Driven
+Test-driven Development at Failure Driven with Michael Mileswki
+
+Coding challenges for writing clean and testable code
 
 ## Setup
 
